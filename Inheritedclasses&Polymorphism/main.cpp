@@ -7,7 +7,7 @@
 
 using namespace std; 
 
-void draw_shape const(shape *s)
+void draw_shape (shape *s)
 {
     s->draw();
 }
