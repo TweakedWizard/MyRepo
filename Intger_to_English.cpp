@@ -5,21 +5,21 @@ using namespace std;
 
 string num_to_text[] =
 {
-    "", "one", "two", "three", "four", "five",  
-    "six", "seven", "eight", "nine", "ten", 
-    "eleven", "twelve", "thirteen", "fourteen", "fifteen", 
-    "sixteen", "seventeen", "eighteen", "nineteen" 
+    "", "one ", "two ", "three ", "four ", "five ",  
+    "six ", "seven ", "eight ", "nine ", "ten ", 
+    "eleven ", "twelve ", "thirteen ", "fourteen ", "fifteen ", 
+    "sixteen ", "seventeen ", "eighteen ", "nineteen " 
 };
 
 string tens_to_text[] =
 {
-    "", "", "twenty", "thirty", "forty", "fifty",  
-    "sixty", "seventy", "eightty", "ninety"
+    "", "", "twenty ", "thirty ", "forty ", "fifty ",  
+    "sixty ", "seventy ", "eightty ", "ninety "
 };
 
 string power_to_text [] =
 {
-    "", "thousand", "million", "billionn"
+    "", "thousand ", "million ", "billion "
 };
 
 string padNeeded (string ans)
@@ -52,7 +52,7 @@ string translateThousand (int thousand_part)
     {
         int hundreds = thousand_part / 100;
         int hundred_part = thousand_part % 100;
-        return num_to_text [hundreds] + " hundred" + padNeeded (translateHundred (hundred_part));
+        return num_to_text [hundreds] + " hundred " + padNeeded (translateHundred (hundred_part));
     }
 }
 
@@ -82,7 +82,7 @@ int main ()
 
     if (number == "")
     {
-        number = "zero";
+        number = "zero ";
     }
 
     if (is_negative)
