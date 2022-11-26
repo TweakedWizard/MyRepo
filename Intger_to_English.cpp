@@ -22,15 +22,6 @@ string power_to_text [] =
     "", "thousand ", "million ", "billion "
 };
 
-string padNeeded (string ans)
-{
-    if (ans == "")
-    {
-        return "";
-    }
-    return "" + ans;
-}
-
 string translateHundred (int hundred_part)
 {
     if (hundred_part < 20)
@@ -39,7 +30,7 @@ string translateHundred (int hundred_part)
     }
     int tens = hundred_part / 10;
     int ones = hundred_part % 10;
-    return tens_to_text [tens] + padNeeded (num_to_text [ones]);
+    return tens_to_text [tens] + num_to_text [ones];
 }
 
 string translateThousand (int thousand_part)
@@ -52,7 +43,7 @@ string translateThousand (int thousand_part)
     {
         int hundreds = thousand_part / 100;
         int hundred_part = thousand_part % 100;
-        return num_to_text [hundreds] + " hundred " + padNeeded (translateHundred (hundred_part));
+        return num_to_text [hundreds] + " hundred " + translateHundred (hundred_part);
     }
 }
 
@@ -74,7 +65,7 @@ int main ()
     {
         if (n % 1000 != 0)
         {
-            number = translateThousand (n % 1000) + padNeeded (power_to_text [part_count] + padNeeded (number));
+            number = translateThousand (n % 1000) + power_to_text [part_count] + number;
         }
         n /= 1000;
         part_count++;
